@@ -1,0 +1,26 @@
+{
+  "name": "myhealthpass",
+  "version": "1.0.0",
+  "description": "medullan Testcase: library(Middleware) to manage authentication and authorization.",
+  "main": "main.js",
+  "scripts": {
+    "test": "nodemon --exec mocha ./tests/tests"
+    ,"test_mocha": "mocha ./tests/tests"
+  },
+  "keywords": [
+    "medullan",
+    "test",
+    "case"
+  ],
+  "author": "Mauricio Acevedo",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.5",
+    "chai": "^4.2.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "mocha": "^6.0.2",
+    "mongoose": "^5.4.20",
+    "nodemon": "^1.18.10"
+  }
+}
