@@ -4,8 +4,7 @@
   "description": "medullan Testcase: library(Middleware) to manage authentication and authorization.",
   "main": "main.js",
   "scripts": {
-    "test": "nodemon --exec mocha ./tests/tests"
-    ,"test_mocha": "mocha ./tests/tests"
+    "test": "mocha ./tests/tests --exit"
   },
   "keywords": [
     "medullan",

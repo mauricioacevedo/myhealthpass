@@ -19,7 +19,12 @@ describe('My Health pass Tests', function (){
         it('Delete Collections', function(){
 
             db_actions.resetCollections()
-            .then(msg=>{assert.equal(msg,'OK')})
+            .then(msg=>{
+                setTimeout(() => {
+                    console.log("[INFO]Sleep for 1 sec.");
+                }, 1000);
+                assert.equal(msg,'OK')
+            })
             .catch(err=>{ 
                 console.log(err);
                 assert.fail(err)
