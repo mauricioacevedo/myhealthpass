@@ -5,7 +5,7 @@ Solution to the Medullan coding exercise.
 -	To use the module its necessary to import the app.js file to your project.
 -	The module was developed using TDD concept. 10 tests were made to check the whole software behavior.
 
-##How to use:
+### How to use:
 1. Copy the whole project in your working set.
 2. Execute npm install to download the necesary software libraries.
 3. Include in your implementation the file app.js. This file is the entry point for the system functionality.
