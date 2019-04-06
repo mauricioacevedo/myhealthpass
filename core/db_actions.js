@@ -8,8 +8,7 @@ mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
 mongoose.connect(process.env.URLDB, { useNewUrlParser: true }, (err,resp) => {
     if(err) throw err;
-    console.log('[INFO]MyHealthPass database ONLINE! ');
-    
+    console.log('[INFO]MyHealthPass database ONLINE! '+mongoose.connection.host);
 });
 
 const User = require("./../models/users");

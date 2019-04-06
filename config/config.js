@@ -4,8 +4,8 @@
  ***************************************************************/
 
 /********************** DATABASE CONFIG ************************/
-//process.env.URLDB='mongodb://localhost:27017/myhealthpassdb';
-process.env.URLDB=process.env.URLDB||'mongodb://myhealthpass:Starcraft1*@ds115396.mlab.com:15396/myhealthpassdb';
+
+process.env.URLDB=process.env.URLDB||'mongodb://localhost:27017/myhealthpassdb';
         
 
 /*************** PASSWORD COMPLEXITY POLICIES *******************/
