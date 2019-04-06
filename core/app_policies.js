@@ -19,7 +19,10 @@ let password_policy_check = (password) => {
     
     //1. check password length
     if(process.env.PASSWORD_LENGTH!="DISABLED"){
-        if(password.length < process.env.PASSWORD_LENGTH){
+        if(password ===undefined){
+            errors.push(`- Invalid password: undefined.`);
+        }
+        else if(password.length < process.env.PASSWORD_LENGTH){
             errors.push(`- Invalid password length (${password.length}).`);
             //return `[ERROR] Invalid password length (${password.length}).`;
         }
@@ -89,7 +92,6 @@ let new_user_valid_fields = (user) => {
     }else{
         return 'OK';
     }
-    
 }
 
 let valid_email_check = (email)=>{
