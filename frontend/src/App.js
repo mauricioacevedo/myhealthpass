@@ -33,8 +33,17 @@ const styles=  {
 class App extends Component {
 
   state = {
-    value: 0,
+    value: 0
   };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 0
+    };
+
+  }
+
 
   handleChange = (event, value) => {
     this.setState({ value });
@@ -55,7 +64,7 @@ class App extends Component {
             <Fragment>
               <Tabs value={this.state.value}  
             onChange={this.handleChange}
-            fullWidth={true}
+            variant="fullWidth"
             scrollButtons="auto"
             classes={{
               indicator: classes.indicator
@@ -75,6 +84,7 @@ class App extends Component {
               </Tabs>
 
               <Switch>
+                <Route path="/" render={() => <Register/>} />
                 <Route path="/register" render={() => <Register/>} />
                 <Route path="/login" render={() => <Login/>} />
                 <Route path="/attack" render={() => <Attack/>} />
