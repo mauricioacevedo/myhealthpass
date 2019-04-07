@@ -1,5 +1,6 @@
+
 const express = require("express");
-const myhealthpass = require("../../app")
+
 const app = express();
 
 app.post('/user', (req,res)=>{
@@ -17,9 +18,7 @@ app.post('/user', (req,res)=>{
         password: body.password,
         role: body.role
     }
-
-    console.log(request_signature);
-    console.log(user);
+    const myhealthpass = require("../../app")
     myhealthpass.register(user,request_signature)
     .then(msg=>{
         res.json({status: 'OK'});
@@ -47,7 +46,7 @@ app.get('/login', (req,res)=>{
         username: req.query.username,
         password: req.query.password
     }
-
+    const myhealthpass = require("../../app")
     myhealthpass.login(user,request_signature)
     .then(msg=>{
         res.json(
@@ -78,7 +77,7 @@ app.get('/checkout_token', (req,res)=>{
     let request_signature={user_agent,ip_address,cookies};
 
     let token = req.query.token;
-
+    const myhealthpass = require("../../app")
     myhealthpass.checkoutToken(token,request_signature)
     .then(msg=>{
         res.json(
