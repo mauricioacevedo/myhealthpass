@@ -156,10 +156,10 @@ describe('My Health pass Tests', function (){
 
             try { 
                 let l = await app.login(user,request_signature_global); 
-                //console.log(l);
+                console.log(l);
                 assert.fail("[ERROR]Let a user login with a wrong password.");
             } catch (error) {
-                //console.log(error);
+                console.log(error);
                 assert.include(error,'ERROR');
             }
 
@@ -189,6 +189,7 @@ describe('My Health pass Tests', function (){
                 let l1 = await app.login(userToBlock,request_signature_global).catch(err=>{return err}); 
                 let l2 = await app.login(userToBlock,request_signature_global).catch(err=>{return err}); 
                 let l3 = await app.login(userToBlock,request_signature_global).catch(err=>{return err}); 
+                //console.log("[THING]"+l3);
                 let l4 = await app.login(userToBlock,request_signature_global).catch(err=>{return err}); 
                 //console.log("[THING]"+l4);
                 assert.include(l4,'blocked');
@@ -211,9 +212,9 @@ describe('My Health pass Tests', function (){
                 }
                 try{
                     resp=await app.login(forceUser,request_signature_global);
-                    //console.log("[WHAT]"+what);
+                    console.log("[WHAT]"+what);
                 }catch(err){
-                    //console.log("[ERROR]"+err);
+                    console.log("[ERROR]"+err);
                     resp=err;
                     if(err.indexOf("SYSTEM LOCKOUT")!=-1){
                         break;

@@ -30,6 +30,7 @@ let execute_action = (action, param, request_signature) => {
         .then(resp=>{//everything seems ok, let it pass
             return main.execute(action,param,request_signature);
         }).catch(err=>{
+            //control login again....
             return Promise.reject(err);
         });
     
