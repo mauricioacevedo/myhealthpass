@@ -59,7 +59,7 @@ class App extends Component {
       <br/>
       
       <Route
-          path="/"
+          path=""
           render={({ location }) => (
             <Fragment>
               <Tabs value={this.state.value}  
@@ -70,24 +70,25 @@ class App extends Component {
               indicator: classes.indicator
             }}
               >
-                <Tab label="Register" component={Link} to="/myhealthpass/register" className=
+                <Tab label="Register" component={Link} to="/register" className=
             {this.state.value===0 ? classes.active_tab :classes.default_tabStyle} />
-                <Tab label="Login" component={Link} to="/myhealthpass/login" className=
+                <Tab label="Login" component={Link} to="/login" className=
             {this.state.value===1 ? classes.active_tab :classes.default_tabStyle} />
                 <Tab
                   label="Attack!!!"
                   component={Link}
-                  to="/myhealthpass/attack"
+                  to="/attack"
                   className=
             {this.state.value===2 ? classes.active_tab :classes.default_tabStyle}
                 />
               </Tabs>
 
               <Switch>
-                <Route path="" render={() => <Register/>} />
-                <Route path="./register" render={() => <Register/>} />
-                <Route path="./login" render={() => <Login/>} />
-                <Route path="./attack" render={() => <Attack/>} />
+                
+                <Route path="/register" render={() => <Register/>} />
+                <Route path="/login" render={() => <Login/>} />
+                <Route path="/attack" render={() => <Attack/>} />
+                <Route path="/" render={() => <Register/>} />
               </Switch>
             </Fragment>
           )}
