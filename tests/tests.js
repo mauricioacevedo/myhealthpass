@@ -26,7 +26,7 @@ describe('My Health pass Tests', function (){
                 assert.equal(msg,'OK')
             })
             .catch(err=>{ 
-                console.log(err);
+                //console.log(err);
                 assert.fail(err)
             });
 
@@ -140,7 +140,7 @@ describe('My Health pass Tests', function (){
             //let token= "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVjYTc5YzU4NjdjMjUxNjE3YzUyNGMyNyIsIm5hbWUiOiJNYXVyaWNpbyBBY2V2ZWRvIiwidXNlcm5hbWUiOiJtYXVyaWNpby5hY2V2ZWRvQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsInN0YXR1cyI6IkFDVElWRSIsImNyZWF0ZWRBdCI6IjIwMTktMDQtMDVUMTg6MjA6MDguNTI2WiIsInVwZGF0ZWRBdCI6IjIwMTktMDQtMDVUMTg6MjA6MDguNTI2WiIsIl9fdiI6MH0sImlhdCI6MTU1NDQ4ODQwOSwiZXhwIjoxNTU0NDg5MDA5fQ.NfLIFjSXfdIEaa8iBRof9ZC9bf5RUtwVWmEjpvWNgNg";
             try {
                 let r= await app.checkoutToken(token,request_signature_global);
-                console.log(r);
+                //console.log(r);
                 assert.fail("[ERROR]JSON WEB TOKEN ALIVE!!!!");
             } catch (error) {
                 //console.log(error);
@@ -156,10 +156,10 @@ describe('My Health pass Tests', function (){
 
             try { 
                 let l = await app.login(user,request_signature_global); 
-                console.log(l);
+                //console.log(l);
                 assert.fail("[ERROR]Let a user login with a wrong password.");
             } catch (error) {
-                console.log(error);
+                //console.log(error);
                 assert.include(error,'ERROR');
             }
 
@@ -212,9 +212,9 @@ describe('My Health pass Tests', function (){
                 }
                 try{
                     resp=await app.login(forceUser,request_signature_global);
-                    console.log("[WHAT]"+what);
+                    //console.log("[WHAT]"+what);
                 }catch(err){
-                    console.log("[ERROR]"+err);
+                    //console.log("[ERROR]"+err);
                     resp=err;
                     if(err.indexOf("SYSTEM LOCKOUT")!=-1){
                         break;
